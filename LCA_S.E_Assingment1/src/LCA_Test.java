@@ -85,8 +85,7 @@ public class LCA_Test {
 		tree.root.left.left =new Node(1);
 		tree.root.right.left =new Node(0);
 		tree.root.right.right.right =new Node(8);
-		tree.root.right.right.left =new Node(9);
-			
+		tree.root.right.right.left =new Node(9);		
 	}
 
 }
