@@ -50,5 +50,35 @@ public class DAG_Test {
 		
 		assertEquals(4, graph.E());
 	}
+	@Test
+	public void testIndegree()
+	{
+		DAG graph = new DAG(5);
+		
+		graph.addEdge(1, 2);
+		graph.addEdge(2, 3);
+		graph.addEdge(4, 3);
+		
+		
+		assertEquals(2, graph.indegree(3));
+	
+		assertEquals(-1, graph.indegree(8));
+	}
+	
+	@Test
+	public void testOutdegree()
+	{
+		DAG graph = new DAG(5);
+		
+		graph.addEdge(1, 2);
+		graph.addEdge(2, 3);
+		graph.addEdge(4, 3);
+
+		assertEquals(1, graph.outdegree(1));
+	
+		assertEquals(-1, graph.outdegree(8));
+	}
+	
+
 
 }
