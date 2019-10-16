@@ -79,6 +79,20 @@ public class DAG_Test {
 		assertEquals(-1, graph.outdegree(8));
 	}
 	
+	@Test
+	public void addEdge()
+	{
+		DAG graph = new DAG(5);
+		
+		graph.addEdge(1,2);
+
+		graph.addEdge(-1, -6); //not added because negative
+		
+		graph.addEdge(3, 12);// not added as 12 is bigger then 5
+		
+		assertEquals(1, graph.E());
+	}
+	
 
 
 }
