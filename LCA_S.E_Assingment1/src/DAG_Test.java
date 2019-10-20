@@ -173,6 +173,18 @@ public class DAG_Test {
 		//Checking for non-present vertex
 		assertEquals(-1, graph.findLCA(8, 2));	
 	}
+	@Test
+	public void testLCAForSameVertex()
+	{
+		DAG graph = new DAG(10);
+		
+		graph.addEdge(0, 1);
+		graph.addEdge(1, 2);
+		graph.addEdge(0, 2);
+		
+		assertEquals(3, graph.findLCA(3, 3));	
+	}
+	
 
 
 }
