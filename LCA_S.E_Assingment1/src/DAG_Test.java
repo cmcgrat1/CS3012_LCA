@@ -149,6 +149,30 @@ public class DAG_Test {
 		assertEquals(-1, graph.findLCA(0, 3));
 		assertEquals(-1, graph.findLCA(0, 5));
 	}
+	@Test
+	public void testLCAforNoCommonAncestors()
+	{
+		DAG graph = new DAG(10);
+		graph.addEdge(0, 1);
+		graph.addEdge(0, 3);
+		graph.addEdge(1, 3);
+		graph.addEdge(3, 2);
+		graph.addEdge(2, 4);
+		graph.addEdge(1, 5);
+		graph.addEdge(2, 5);
+		
+		//Checking LCA function works
+		assertEquals(0, graph.findLCA(2, 1));
+		assertEquals(3, graph.findLCA(2, 3));
+		assertEquals(2, graph.findLCA(4, 5));
+		
+		//Checking for negative vertex
+		assertEquals(-1, graph.findLCA(-2, 3));
+		assertEquals(-1, graph.findLCA(3, -2));
+		
+		//Checking for non-present vertex
+		assertEquals(-1, graph.findLCA(8, 2));	
+	}
 
 
 }
