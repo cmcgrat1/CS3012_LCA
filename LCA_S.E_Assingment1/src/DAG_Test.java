@@ -142,6 +142,13 @@ public class DAG_Test {
 		assertEquals(8, graph.findLCA(7, 8));
 		assertEquals(6, graph.findLCA(6, 7));
 	}
+	@Test
+	public void testLCAForEmptyDAG()
+	{
+		DAG graph = new DAG(8);
+		assertEquals(-1, graph.findLCA(0, 3));
+		assertEquals(-1, graph.findLCA(0, 5));
+	}
 
 
 }
