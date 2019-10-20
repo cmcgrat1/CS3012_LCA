@@ -184,6 +184,22 @@ public class DAG_Test {
 		
 		assertEquals(3, graph.findLCA(3, 3));	
 	}
+	@Test
+	public void testLCAForNonDAG()
+	{
+		DAG graph = new DAG(10);
+		
+		graph.addEdge(0, 1);
+		graph.addEdge(0, 3);
+		graph.addEdge(3, 2);
+		graph.addEdge(2, 0);
+		graph.addEdge(2, 4);
+		
+		assertEquals(-1, graph.findLCA(3, 2));
+		assertEquals(-1, graph.findLCA(2, 4));
+		assertEquals(-1, graph.findLCA(1, 3));
+		
+	}
 	
 
 
