@@ -200,7 +200,5 @@ public class DAG_Test {
 		assertEquals(-1, graph.findLCA(1, 3));
 		
 	}
-	
-
 
 }
